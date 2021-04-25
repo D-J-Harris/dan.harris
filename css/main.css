@@ -7,9 +7,38 @@ body {
   margin: 0;
 }
 
+.bounce {
+  animation-name: bounce-in;
+  animation-duration: 1s;
+  animation-fill-mode: backwards;
+  -webkit-animation-name: bounce-in;
+  -webkit-animation-duration: 1s;
+  -webkit-animation-fill-mode: backwards;
+}
+
+.bounce:nth-child(1n) {
+  animation-delay: 0.1s;
+}
+
+.bounce:nth-child(2n) {
+  animation-delay: 0.2s;
+}
+
+.bounce:nth-child(3n) {
+  animation-delay: 0.3s;
+}
+
+.bounce:nth-child(4n) {
+  animation-delay: 0.4s;
+}
+
+.bounce:nth-child(5n) {
+  animation-delay: 0.5s;
+}
+
 .top-container {
   position: relative;
-  color: #061036;
+  color: #071134;
   text-align: center;
 }
 .top-container .welcome-message {
@@ -30,7 +59,7 @@ body {
 }
 
 .content-container {
-  background-color: #061036;
+  background-color: #071134;
   color: lightcyan;
   text-align: center;
 }
@@ -40,9 +69,32 @@ body {
   padding-top: 5rem;
   bottom: 0;
   width: 100%;
-  background-color: #061036;
+  background-color: #071134;
   color: lightcyan;
   text-align: center;
+}
+
+@keyframes bounce-in {
+  0% {
+    transform: translateY(100%);
+  }
+  90% {
+    transform: translateY(-3%);
+  }
+  100% {
+    transform: translateY(0%);
+  }
+}
+@-webkit-keyframes bounce-in {
+  0% {
+    transform: translateY(100%);
+  }
+  90% {
+    transform: translateY(-3%);
+  }
+  100% {
+    transform: translateY(0%);
+  }
 }
 
 /*# sourceMappingURL=main.css.map */

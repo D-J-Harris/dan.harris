@@ -1,4 +1,4 @@
-$dark-blue: #061036;
+$dark-blue: #071134;
 
 body {
   height: 100vh;
@@ -7,6 +7,20 @@ body {
   flex-direction: column;
   font-family: "Poppins", sans-serif;
   margin: 0;
+}
+
+.bounce {
+  animation-name: bounce-in;
+  animation-duration: 1s;
+  animation-fill-mode: backwards;
+  -webkit-animation-name: bounce-in;
+  -webkit-animation-duration: 1s;
+  -webkit-animation-fill-mode: backwards;
+}
+@for $i from 1 through 5 {
+  .bounce:nth-child(#{$i}n) {
+    animation-delay: #{$i * 0.1}s;
+  }
 }
 
 .top-container {
@@ -49,4 +63,27 @@ body {
   background-color: $dark-blue;
   color: lightcyan;
   text-align: center;
+}
+
+@keyframes bounce-in {
+  0% {
+    transform: translateY(100%);
+  }
+  90% {
+    transform: translateY(-3%);
+  }
+  100% {
+    transform: translateY(0%);
+  }
+}
+@-webkit-keyframes bounce-in {
+  0% {
+    transform: translateY(100%);
+  }
+  90% {
+    transform: translateY(-3%);
+  }
+  100% {
+    transform: translateY(0%);
+  }
 }
