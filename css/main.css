@@ -1,0 +1,48 @@
+body {
+  height: 100vh;
+  background-color: lightcyan;
+  display: flex;
+  flex-direction: column;
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+}
+
+.top-container {
+  position: relative;
+  color: #061036;
+  text-align: center;
+}
+.top-container .welcome-message {
+  position: absolute;
+  top: 5rem;
+  left: 50%;
+  transform: translate(-50%);
+}
+.top-container .welcome-message h1 {
+  font-size: 3rem;
+}
+.top-container .welcome-message p {
+  font-size: 1.4rem;
+}
+.top-container .background {
+  display: block;
+  position: relative;
+}
+
+.content-container {
+  background-color: #061036;
+  color: lightcyan;
+  text-align: center;
+}
+
+.footer {
+  position: relative;
+  padding-top: 5rem;
+  bottom: 0;
+  width: 100%;
+  background-color: #061036;
+  color: lightcyan;
+  text-align: center;
+}
+
+/*# sourceMappingURL=main.css.map */

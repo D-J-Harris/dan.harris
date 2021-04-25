@@ -1,4 +1,15 @@
-## personal website
+## [personal website](https://github.com/D-J-Harris/dan.harris/)
 
-please see [here](https://github.com/D-J-Harris/dan.harris/)
-using this to build and practice vanilla html/js/css side of web dev
+using this website to:
+- build and practice vanilla html/js/css side of web dev
+- host projects written in other frameworks (react, svelte one day)
+- act as a cv landing page
+
+## instructions
+
+to quickly host and tinker locally, clone and use the vscode [live server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer) plugin
+
+to compile scss to css while developing, run
+~~~
+sass --watch css/main.scss:css/main.css
+~~~
