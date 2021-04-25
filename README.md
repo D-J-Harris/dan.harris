@@ -1,4 +1,4 @@
-## [personal website](https://github.com/D-J-Harris/dan.harris/)
+## [personal website](https://d-j-harris.github.io/dan.harris/)
 
 using this website to:
 - build and practice vanilla html/js/css side of web dev
