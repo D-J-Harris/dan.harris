@@ -1,85 +1,132 @@
 * {
-  margin: 0;
-  padding: 0;
-  font-family: sans-serif;
-  background-color: #d7f3df;
+  box-sizing: border-box;
 }
 
-.header {
-  width: 100%;
+html,
+body {
+  scroll-behavior: smooth;
+  background-color: #d7f3df;
+  color: #455a64;
+  font-family: "Indie Flower", cursuve;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  padding: 10px;
+  margin: 0 auto;
   min-height: 100vh;
-  box-sizing: border-box;
+  height: 100%;
   display: flex;
   flex-direction: column;
-  padding-left: 8%;
-  padding-right: 8%;
-  border: solid red 1px;
+  flex-wrap: wrap;
 }
-.header .nav-bar {
-  width: 100%;
-  border: solid green 1px;
+.container nav {
+  display: flex;
+  flex: 1;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 30px;
+}
+.container nav h1 {
+  font-size: 3rem;
+}
+.container nav .hamburger-menu {
+  display: none;
+}
+.container nav .hamburger-menu .hamburger-menu-bar {
+  display: flex;
+  width: 25px;
+  height: 3px;
+  margin: 5px auto;
+  background-color: #455a64;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+.container nav .nav-items {
   display: flex;
   align-items: center;
+  justify-items: center;
+  padding: 0;
+  list-style-type: none;
 }
-.header .nav-bar h1 {
-  font-size: 4rem;
-  color: #455a64;
-  font-family: "Indie Flower", cursive;
-}
-.header .nav-bar nav {
-  flex: 1;
-  text-align: right;
-}
-.header .nav-bar nav .nav-items li {
-  list-style: none;
-  margin-right: 10%;
+.container nav .nav-items li a {
   display: inline-block;
-}
-.header .nav-bar nav .nav-items li a {
   text-decoration: none;
-  color: #455a64;
   font-size: 2rem;
-  font-family: "Indie Flower", cursive;
-  display: inline-block;
+  color: #455a64;
+  padding: 10px 30px;
   transition: ease-in-out 0.2s;
 }
-.header .nav-bar nav .nav-items li a:hover {
-  -webkit-transform: scale(1.2);
+.container nav .nav-items li a:hover {
   transform: scale(1.2);
+  -webkit-transform: scale(1.2);
 }
-.header .header-row {
-  width: 100%;
+.container .hero {
+  text-align: center;
   display: flex;
-  flex-direction: row;
   flex: 1;
-  border: solid blue 1px;
-}
-.header .header-row .col-1 {
-  display: flex;
   flex-direction: column;
   justify-content: space-evenly;
-  border: solid orange 1px;
 }
-.header .header-row .col-1 img {
+.container .hero .hero-img {
+  width: 70%;
+  margin: 0 auto;
+  padding: 20px 0;
+  overflow: hidden;
+}
+.container .hero ul {
+  display: flex;
+  justify-content: space-evenly;
+  list-style-type: none;
+}
+.container .hero ul img {
+  width: 60%;
+  height: auto;
+}
+.container .hero ul li a {
+  display: inline-block;
+  text-decoration: none;
+  color: #455a64;
   transition: ease-in-out 0.2s;
 }
-.header .header-row .col-1 img:hover {
-  -webkit-transform: scale(1.2);
+.container .hero ul li a:hover {
   transform: scale(1.2);
+  -webkit-transform: scale(1.2);
 }
-.header .header-row .col-2 {
-  width: 100%;
-  border: solid yellow 1px;
-  position: relative;
-}
-.header .header-row .col-2 img {
-  position: absolute;
-  right: 0%;
-  top: 50%;
-  transform: translateY(-50%);
-  border: solid olive 1px;
-  width: 90%;
-  height: auto;
+
+@media only screen and (max-width: 768px) {
+  .container nav {
+    justify-content: space-evenly !important;
+  }
+  .container nav .hamburger-menu {
+    display: block !important;
+    cursor: pointer;
+  }
+  .container nav .hamburger-menu.active .hamburger-menu-bar:nth-child(2) {
+    opacity: 0;
+  }
+  .container nav .hamburger-menu.active .hamburger-menu-bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+  .container nav .hamburger-menu.active .hamburger-menu-bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+  .container nav .nav-items {
+    visibility: hidden;
+    position: absolute;
+    opacity: 0;
+  }
+  .container nav .nav-items.active {
+    text-align: center;
+    width: 100%;
+    position: static;
+    visibility: visible;
+    opacity: 1;
+    transition: opacity 1s linear;
+    display: block !important;
+  }
 }
 
 /*# sourceMappingURL=main.css.map */

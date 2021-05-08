@@ -10,42 +10,39 @@
     <title>Dan Harris Site</title>
 </head>
 <body>
-    <div class="header">
-        <div class="nav-bar">
-            <h1>hi, I'm Dan</h1>
+    <header>
+        <div class="container">
             <nav>
+                <h1 class="title">hi, I'm Dan</h1>
+                <div class="hamburger-menu">
+                    <span class="hamburger-menu-bar"></span>
+                    <span class="hamburger-menu-bar"></span>
+                    <span class="hamburger-menu-bar"></span>
+                </div>
                 <ul class="nav-items">
                     <li class="nav-link"> <a href="">work</a> </li>
                     <li class="nav-link"> <a href="">about</a>  </li>
                     <li class="nav-link"> <a href="">musings</a> </li>
                 </ul>
             </nav>
-            <div class="toggle-collapse">
-                <img src="assets/menu-icon.svg" alt="burger menu icon" class="menu-icon" onclick="toggleMenu()">
+
+            <div class="hero">
+                <img class="hero-img" src="assets/hero-image.svg" alt="image of alien waving hello">
+                <ul>
+                    <li class="social-link">
+                        <a href="https://www.linkedin.com/in/daniel-j-harris/"><img src="assets/linkedin.svg" alt="linkedin url button"></a>
+                    </li>
+                    <li class="social-link">
+                        <a class="social-link" href="mailto:09harrisda@gmail.com"><img src="assets/email.svg" alt="email mailto button"></a>
+                    </li>
+                    <li class="social-link">
+                        <a class="social-link" href="assets/daniel_harris_cv.pdf" target="_blank"><img src="assets/cv.svg" alt="cv pdf button"></a>
+                    </li>
+                </ul>       
             </div>
         </div>
-        <div class="header-row">
-            <div class="col-1">
-                <a href="https://www.linkedin.com/in/daniel-j-harris/"> <img src="assets/linkedin.svg" alt="linkedin url button"> </a>
-                <a href="mailto:09harrisda@gmail.com"> <img src="assets/email.svg" alt="email mailto button"> </a>
-                <a href="assets/daniel_harris_cv.pdf" target="_blank"> <img src="assets/cv.svg" alt="cv pdf button"> </a>
-            </div>
-            <div class="col-2">
-                <img src="assets/hero-image.svg" alt="image of alien waving hello" class="hero-img">
-            </div>
-        </div>
-    </div>
-    <script>
-        var menuList = document.getElementById('menuList');
-        menuList.style.display = 'block';
-        function toggleMenu() {
-            if (menuList.style.display == 'block') {
-            menuList.style.display = 'none';
-            }
-            else {
-                menuList.style.display = 'block';
-            }
-        }
-    </script>
+    </header>
+
+    <script src="main.js"></script>
 </body>
 </html>

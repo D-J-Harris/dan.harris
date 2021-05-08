@@ -1,106 +1,158 @@
 $accent-grey: #455a64;
 $website-green: #d7f3df;
+$indie-font: "Indie Flower", cursuve;
 
 * {
-  margin: 0;
-  padding: 0;
-  font-family: sans-serif;
-  background-color: $website-green;
+  box-sizing: border-box;
 }
 
-.header {
-  width: 100%;
+html,
+body {
+  scroll-behavior: smooth;
+  background-color: $website-green;
+  color: $accent-grey;
+  font-family: $indie-font;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  padding: 10px;
+  margin: 0 auto;
   min-height: 100vh;
-  box-sizing: border-box;
+  height: 100%;
   display: flex;
   flex-direction: column;
-  padding-left: 8%;
-  padding-right: 8%;
-  border: solid red 1px;
+  flex-wrap: wrap;
 
-  .nav-bar {
-    width: 100%;
-    border: solid green 1px;
+  nav {
     display: flex;
+    flex: 1;
+    flex-wrap: wrap;
     align-items: center;
+    justify-content: space-between;
+    padding: 0 30px;
 
     h1 {
-      font-size: 4rem;
-      color: $accent-grey;
-      font-family: "Indie Flower", cursive;
+      font-size: 3rem;
     }
 
-    nav {
-      flex: 1;
-      text-align: right;
+    .hamburger-menu {
+      display: none;
 
-      .nav-items li {
-        list-style: none;
-        margin-right: 10%;
-        display: inline-block;
-
-        a {
-          text-decoration: none;
-          color: $accent-grey;
-          font-size: 2rem;
-          font-family: "Indie Flower", cursive;
-          display: inline-block;
-          transition: ease-in-out 0.2s;
-
-          &:hover {
-            -webkit-transform: scale(1.2);
-            transform: scale(1.2);
-          }
-        }
+      .hamburger-menu-bar {
+        display: flex;
+        width: 25px;
+        height: 3px;
+        margin: 5px auto;
+        background-color: $accent-grey;
+        -webkit-transition: all 0.3s ease-in-out;
+        transition: all 0.3s ease-in-out;
       }
     }
-  }
 
-  .header-row {
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    flex: 1;
-    border: solid blue 1px;
-
-    .col-1 {
+    .nav-items {
       display: flex;
-      flex-direction: column;
-      justify-content: space-evenly;
-      border: solid orange 1px;
+      align-items: center;
+      justify-items: center;
+      padding: 0;
+      list-style-type: none;
 
-      img {
+      li a {
+        display: inline-block;
+        text-decoration: none;
+        font-size: 2rem;
+        color: $accent-grey;
+        padding: 10px 30px;
         transition: ease-in-out 0.2s;
 
         &:hover {
-          -webkit-transform: scale(1.2);
           transform: scale(1.2);
+          -webkit-transform: scale(1.2);
         }
       }
     }
+  }
 
-    .col-2 {
-      width: 100%;
-      border: solid yellow 1px;
-      position: relative;
+  .hero {
+    text-align: center;
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    justify-content: space-evenly;
+
+    .hero-img {
+      width: 70%;
+      margin: 0 auto;
+      padding: 20px 0;
+      overflow: hidden;
+    }
+
+    ul {
+      display: flex;
+      justify-content: space-evenly;
+      list-style-type: none;
 
       img {
-        position: absolute;
-        right: 0%;
-        top: 50%;
-        transform: translateY(-50%);
-        border: solid olive 1px;
-        width: 90%;
+        width: 60%;
         height: auto;
+      }
+
+      li a {
+        display: inline-block;
+        text-decoration: none;
+        color: $accent-grey;
+        transition: ease-in-out 0.2s;
+
+        &:hover {
+          transform: scale(1.2);
+          -webkit-transform: scale(1.2);
+        }
       }
     }
   }
 }
 
-// @media only screen and (max-width: 800px) {
-//   nav {
-//     .nav-items {
-//       displ
-//     }
-//   }
-// }
+//mobile
+@media only screen and (max-width: 768px) {
+  .container {
+    nav {
+      justify-content: space-evenly !important;
+
+      .hamburger-menu {
+        display: block !important;
+        cursor: pointer;
+
+        &.active {
+          .hamburger-menu-bar:nth-child(2) {
+            opacity: 0;
+          }
+
+          .hamburger-menu-bar:nth-child(1) {
+            transform: translateY(8px) rotate(45deg);
+          }
+
+          .hamburger-menu-bar:nth-child(3) {
+            transform: translateY(-8px) rotate(-45deg);
+          }
+        }
+      }
+
+      .nav-items {
+        visibility: hidden;
+        position: absolute;
+        opacity: 0;
+
+        &.active {
+          text-align: center;
+          width: 100%;
+          position: static;
+          visibility: visible;
+          opacity: 1;
+          transition: opacity 1s linear;
+          display: block !important;
+        }
+      }
+    }
+  }
+}
